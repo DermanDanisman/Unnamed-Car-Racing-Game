@@ -5,11 +5,11 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     [SerializeField] private Transform centerOfMass;
-    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private Rigidbody carRigidbody;
     [SerializeField] private CarWheels[] carWheels;
 
-    [SerializeField] private float motorTorque = 1500f;
-    [SerializeField] private float steeringAngle = 20f;
+    [SerializeField] private float motorTorque;
+    [SerializeField] private float steeringAngle;
 
     private float Steering { get; set; }
     private float Throttling { get; set; }
@@ -22,12 +22,12 @@ public class Car : MonoBehaviour
         carWheels = GetComponentsInChildren<CarWheels>();
 
         //changing the center of mass location of the car so the car won't roll over while steering
-        _rigidbody = GetComponent<Rigidbody>();
+        carRigidbody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        _rigidbody.centerOfMass = centerOfMass.localPosition;
+        carRigidbody.centerOfMass = centerOfMass.localPosition;
     }
 
     private void Update()

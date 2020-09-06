@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CarWheels : MonoBehaviour
 {
-    [SerializeField] private bool canSteer = false;
-    [SerializeField] private bool shouldInvertSteer = false;
-    [SerializeField] private bool canPower = false;
+    [SerializeField] private bool canSteer;
+    [SerializeField] private bool shouldInvertSteer;
+    [SerializeField] private bool canPower;
 
     private WheelCollider wheelCollider;
     private Transform wheelTransform;
@@ -26,7 +26,7 @@ public class CarWheels : MonoBehaviour
         //to rotate the transform(mesh) of wheels according to wheel colliders so wheels can rotate when the car moves
         wheelCollider.GetWorldPose(out Vector3 pos, out Quaternion rot);
         wheelTransform.position = pos;
-        wheelTransform.rotation = rot * Quaternion.Euler(0, 0, 90);
+        wheelTransform.rotation = rot;
     }
     private void FixedUpdate() 
     {

@@ -15,7 +15,6 @@ public class InputController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         SteeringInput = Input.GetAxis(steeringInput);
