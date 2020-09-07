@@ -18,7 +18,7 @@ public class CarWheels : MonoBehaviour
     {
         //Assigning wheel colliders to wheelCollider and wheel transforms to wheelTransfom at Awake
         wheelCollider = GetComponentInChildren<WheelCollider>();
-        wheelTransform = GetComponentInChildren<MeshRenderer>().GetComponent<Transform>();
+        wheelTransform = GetComponentInChildren<MeshRenderer>().transform;
     }
 
     void Update()
